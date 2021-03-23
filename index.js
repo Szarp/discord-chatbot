@@ -1,3 +1,4 @@
+const { loginToken } = require("./.secrets/config.json");
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
@@ -11,4 +12,4 @@ client.on("message", message => {
 	}
 });
 
-client.login("your-token-goes-here");
+client.login(loginToken);
