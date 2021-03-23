@@ -7,10 +7,11 @@ client.once("ready", () => {
 });
 
 client.on("message", message => {
-	if (message.content === "!ping") {
-		message.channel.send("Pong.");
+	const { channel, content } = message;
+	if (content === "!ping") {
+		channel.send("Pong.");
 	}
-	if (message.content === "!create") {
+	if (content === "!create") {
 		let name = message.author.username;
 		message.guild?.channels.create(name, {
 			type: "text", //This create a text channel, you can make a voice one too, by changing "text" to "voice"
@@ -22,8 +23,80 @@ client.on("message", message => {
 				}
 			],
 		})
-			.then(console.log)
 			.catch(console.error);
+	}
+	if (content === "!embed") {
+		const exampleEmbed = new Discord.MessageEmbed()
+			.setColor("#0099ff")
+			.setTitle("Some title")
+			.setURL("https://discord.js.org/")
+			.setAuthor("Some name", "https://i.imgur.com/wSTFkRM.png", "https://discord.js.org")
+			.setDescription("Some description here")
+			.setThumbnail("https://i.imgur.com/wSTFkRM.png")
+			.addFields(
+				{ name: "Regular field title", value: "Some value here" },
+				{ name: "\u200B", value: "\u200B" },
+				{ name: "Inline field title", value: "Some value here", inline: true },
+				{ name: "Inline field title", value: "Some value here", inline: true },
+			)
+			.addField("Inline field title", "Some value here", true)
+			.setImage("https://i.imgur.com/wSTFkRM.png")
+			.setTimestamp()
+			.setFooter("Some footer text here", "https://i.imgur.com/wSTFkRM.png");
+
+		channel.send(exampleEmbed);
+	}
+	if (content === "!embed2") {
+		const exampleEmbed = {
+			color: 0x0099ff,
+			title: "Some title",
+			url: "https://discord.js.org",
+			author: {
+				name: "Some name",
+				icon_url: "https://i.imgur.com/wSTFkRM.png",
+				url: "https://discord.js.org",
+			},
+			description: "Some description here",
+			thumbnail: {
+				url: "https://i.imgur.com/wSTFkRM.png",
+			},
+			fields: [
+				{
+					name: "Regular field title",
+					value: "Some value here",
+				},
+				{
+					name: "\u200b",
+					value: "\u200b",
+					inline: false,
+				},
+				{
+					name: "Inline field title",
+					value: "Some value here",
+					inline: true,
+				},
+				{
+					name: "Inline field title",
+					value: "Some value here",
+					inline: true,
+				},
+				{
+					name: "Inline field title",
+					value: "Some value here",
+					inline: true,
+				},
+			],
+			image: {
+				url: "https://i.imgur.com/wSTFkRM.png",
+			},
+			timestamp: new Date(),
+			footer: {
+				text: "Some footer text here",
+				icon_url: "https://i.imgur.com/wSTFkRM.png",
+			},
+		};
+
+		channel.send({ embed: exampleEmbed });
 	}
 });
 
