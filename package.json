@@ -1,0 +1,26 @@
+{
+  "name": "discord-chatbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Szarp/discord-chatbot.git"
+  },
+  "author": "Szarp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Szarp/discord-chatbot/issues"
+  },
+  "homepage": "https://github.com/Szarp/discord-chatbot#readme",
+  "devDependencies": {
+    "@types/node": "^14.14.35",
+    "eslint": "^7.22.0"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}
