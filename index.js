@@ -1,27 +1,20 @@
 const { loginToken } = require("./.secrets/config.json");
+const dbManager = require("./lib/db.js");
+const routeMessage = require("./lib/messagesRouter.js");
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-const { pingPong, createCommand, embed1, embed2 } = require("./lib/testMessages");
+async function main() {
+	// Wait for the DB connection
+	await dbManager.init();
 
-client.once("ready", () => {
-	console.log("Ready!");
-});
+	client.once("ready", () => {
+		console.log("Ready!");
+	});
 
-client.on("message", message => {
-	const { content } = message;
-	if (content === "!ping") {
-		pingPong(message);
-	}
-	else if (content === "!create") {
-		createCommand(message);
-	}
-	else if (content === "!embed") {
-		embed1(message);
-	}
-	else if (content === "!embed2") {
-		embed2(message);
-	}
-});
+	client.on("message", routeMessage);
 
-client.login(loginToken);
+	client.login(loginToken);
+}
+
+main();

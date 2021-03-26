@@ -24,6 +24,16 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "no-extra-parens": "error",
+        "no-unsafe-optional-chaining": "error",
+        "no-useless-backreference": "error",
+        "require-atomic-updates": "error",
+        "eqeqeq": "error",
+        "no-else-return": "error",
+        "no-return-await": "error",
+        "require-await": "error",
+        "no-var": "error",
+        "no-warning-comments": "warn"
     }
 }

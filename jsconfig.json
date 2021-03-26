@@ -5,6 +5,8 @@
 		"module": "commonJS",
 		"moduleResolution": "node",
 		"resolveJsonModule": true,
-		"strict": true
-	}
+		"strict": true,
+		"target": "esnext"
+	},
+	"exclude": ["node_modules"]
 }

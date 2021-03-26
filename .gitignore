@@ -117,3 +117,6 @@ dist
 
 # Don't leak secrets
 .secrets
+
+# Private scripts (eg. start DB with proper config)
+scripts/private
