@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run lint && npm run typecheck",
+    "lint": "eslint index.js lib",
+    "lint:fix": "eslint index.js lib --fix",
+    "typecheck": "tsc --project jsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -18,7 +21,9 @@
   "homepage": "https://github.com/Szarp/discord-chatbot#readme",
   "devDependencies": {
     "@types/node": "^14.14.35",
-    "eslint": "^7.22.0"
+    "@types/ws": "^7.4.0",
+    "eslint": "^7.22.0",
+    "typescript": "^4.2.3"
   },
   "dependencies": {
     "discord.js": "^12.5.1",

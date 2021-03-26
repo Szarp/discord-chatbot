@@ -34,6 +34,27 @@
         "no-return-await": "error",
         "require-await": "error",
         "no-var": "error",
-        "no-warning-comments": "warn"
+        "no-warning-comments": "warn",
+        "no-console": [
+            "warn",
+            {
+                "allow": [
+                    "warn",
+                    "error"
+                ]
+            }
+        ],
+        "camelcase": [
+            "error",
+            {
+                "allow": [
+                    "icon_url"
+                ]
+            }
+        ],
+        "brace-style": [
+            "error",
+            "1tbs"
+        ]
     }
 }
