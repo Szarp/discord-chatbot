@@ -9,6 +9,7 @@ async function main() {
 	await dbManager.init();
 
 	client.once("ready", () => {
+		// eslint-disable-next-line no-console
 		console.log("Ready!");
 	});
 
