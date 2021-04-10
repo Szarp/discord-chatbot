@@ -1,7 +1,7 @@
-const { loginToken } = require("./.secrets/config.json");
-const dbManager = require("./lib/db.js");
-const routeMessage = require("./lib/messagesRouter.js");
-const Discord = require("discord.js");
+import { loginToken } from "./.secrets/config.json";
+import dbManager from "./lib/db.js";
+import routeMessage from "./lib/messagesRouter.js";
+import * as Discord from "discord.js";
 const client = new Discord.Client();
 
 async function main() {

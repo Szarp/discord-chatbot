@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"checkJs": true,
 		"lib": ["esnext"],
-		"module": "commonJS",
+		"module": "esnext",
 		"moduleResolution": "node",
 		"resolveJsonModule": true,
 		"strict": true,
@@ -10,7 +10,9 @@
 		"forceConsistentCasingInFileNames": true,
 		"noImplicitReturns": true,
 		"noUnusedLocals": true,
-		"noUnusedParameters": true
+		"noUnusedParameters": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true
 	},
 	"exclude": ["node_modules"]
 }
