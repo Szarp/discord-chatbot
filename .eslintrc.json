@@ -48,7 +48,8 @@
             "error",
             {
                 "allow": [
-                    "icon_url"
+                    "icon_url",
+                    "correct_answer"
                 ]
             }
         ],

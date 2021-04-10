@@ -1,7 +1,8 @@
-import { loginToken } from "./.secrets/config.json";
+import secretConfig from "./.secrets/config.json";
 import dbManager from "./lib/db.js";
 import routeMessage from "./lib/messagesRouter.js";
 import * as Discord from "discord.js";
+const { loginToken } = secretConfig;
 const client = new Discord.Client();
 
 async function main() {
